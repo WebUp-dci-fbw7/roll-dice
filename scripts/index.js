@@ -37,21 +37,20 @@ let button = document.body.querySelector("#roll-dice");
 
 let rollDice = button.addEventListener("click", event =>{
 event.preventDefault;
+	
+	let containerOne = document.body.querySelector("#container-1");
+	const diceUno = diceOne.roll();
+	let diceOneOutput = document.createTextNode(diceUno);
+	containerOne.appendChild(diceOneOutput);
 
-let containerOne = document.body.querySelector("#container-1");
-const diceUno = diceOne.roll();
-let diceOneOutput = document.createTextNode(diceUno);
-containerOne.appendChild(diceOneOutput);
+	let containerTwo = document.body.querySelector("#container-2");
+	const diceDos = diceTwo.roll();
+	let diceTwoOutput = document.createTextNode(diceDos);
+	containerTwo.appendChild(diceTwoOutput);
 
 
 
-
-// let containerOne = document.body.querySelector("container-1");
-// let text = document.createTextNode("haha, just kidding");
-// containerOne.appendChild(text);
-
-diceTwo.roll();
-console.log(diceOne.value);
-console.log(diceTwo.value);
+// console.log(diceOne.value);
+// console.log(diceTwo.value);
 
 });
