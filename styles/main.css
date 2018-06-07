@@ -1,0 +1,6 @@
+#container-1, #container-2 {
+	width: 200px;
+	height: 200PX;
+	border: 2px solid black;
+	display: inline-block;
+}
