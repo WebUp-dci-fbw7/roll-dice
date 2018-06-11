@@ -1,7 +1,7 @@
 function getRandomInt(min, max) {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min)) + min;
+	min = Math.floor(min);
+	max = Math.ceil(max);
+	return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
 
@@ -29,28 +29,46 @@ let diceTwo = {
 //
 // diceOne.roll();
 // console.log(diceOne.value);
-
+//
 
 
 let button = document.body.querySelector("#roll-dice");
 
 
-let rollDice = button.addEventListener("click", event =>{
-event.preventDefault;
+
+const loadDice = event =>{
+	if(event) {
+		event.preventDefault;
+	}
 	
+
 	let containerOne = document.body.querySelector("#container-1");
 	const diceUno = diceOne.roll();
-	let diceOneOutput = document.createTextNode(diceUno);
-	containerOne.appendChild(diceOneOutput);
+
+	let newClass = "img-0"+diceUno;
+
+	let elm = document.getElementById("container-1");
+
+	if(elm.className !== newClass){
+		elm.className = newClass;
+}
 
 	let containerTwo = document.body.querySelector("#container-2");
 	const diceDos = diceTwo.roll();
-	let diceTwoOutput = document.createTextNode(diceDos);
-	containerTwo.appendChild(diceTwoOutput);
+	// let diceTwoOutput = document.createTextNode(diceDos);
+	// containerTwo.appendChild(diceTwoOutput);
+
+	let newClassTwo = "img-0"+diceDos;
+	let elmTwo = document.getElementById("container-2");
+
+	if(elmTwo.className !== newClassTwo){
+		elmTwo.className = newClassTwo;
+}
+
+};
 
 
+//----------------------click event-----------------------
+let rollDice = button.addEventListener("click", loadDice);
 
-// console.log(diceOne.value);
-// console.log(diceTwo.value);
-
-});
+loadDice();
